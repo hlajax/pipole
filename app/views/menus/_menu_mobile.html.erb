@@ -1,28 +1,23 @@
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12">
+
                 
           <h3 class="text-white logo text-center">
             <%=link_to root_path do %>
                 pipole
             <% end %>
           </h3>
-        <ul class="nav  nav-principale m-top-grand"> 
+        <ul class="nav  nav-principale"> 
           <%Rubrique.all.each do |rubrique| %>
-          <li class="nav-item mb-3">
-            <a class="nav-link active" href="#"><%=rubrique.titre%></a>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><%=rubrique.titre%></a>
           </li>
         <% end %>
           <%if lecteur_signed_in?%>
-          <li class="nav-item mb-3">
-            <a class="nav-link active" href="#">Mon profil</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mon profil</a>
           </li>
           <% else %>
-          <li class="nav-item mb-3">
-            <a class="nav-link active" href="#">Connexion</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Connexion</a>
           </li>
           <% end %>
       </ul>
-    </div>
-    </div>
-  </div>

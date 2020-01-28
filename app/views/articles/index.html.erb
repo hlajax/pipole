@@ -20,15 +20,14 @@
           <% end %>
         </div>
         <div class="col-lg-5 m-top-mini">
-          <h5 class="rubrique-titre">à la une</h5>
+          <h5 class="rubrique-titre">à la une <span class="categorie-titre-minie ml-4"><%=article.rubrique.titre%></span></h5>
           <hr>
-          <span class="categorie-titre-minie"><%=article.rubrique.titre%></span>
           <h2 class="article-titre">
           <%=link_to article do %>
                 <%= article.titre %>
           <% end %>
           </h2>
-          <h6><%= article.votes_for.size %> réaction(s)</h6>
+          <h6 class="texte-reaction"><%= article.votes_for.size %> réaction(s)</h6>
           <hr>
         </div>
         <%end%>
@@ -40,10 +39,10 @@
             <%= image_tag article.image.url, class:"img-fluid mb-2" %>
           <% end %>
           <span class="categorie-titre-petite"><%=article.rubrique.titre%></span>
-          <h6 class="article-titre">
+          <h6 class="article-titre-mini">
             <%=link_to article do %><%= article.titre %><% end %>
           </h6>
-          <h6><small><%= article.votes_for.size %> réaction(s)</small></h6>
+          <h6 class="texte-reaction"><%= article.votes_for.size %> réaction(s)</h6>
         </div>
         <% end %>
       </div>
@@ -58,12 +57,12 @@
           <div class="row">
             <div class="col-lg-6 col-6 m-top-mini">
               <span class="categorie-titre"><%=article.rubrique.titre%></span>
-              <h2 class="article-titre">
+              <h2 class="article-titre-mini">
                 <%=link_to article do %>
                 <%= article.titre %>
                 <% end %>
               </h2>
-              <h6><%= article.votes_for.size %> réaction(s)</h6>
+              <h6 class="texte-reaction"><%= article.votes_for.size %> réaction(s)</h6>
             </div>
 
             <div class="col-lg-6 col-6">
