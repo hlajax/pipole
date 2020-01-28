@@ -1,9 +1,12 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-2 bg-black">
+    <div class="col-lg-2 d-xl-block d-lg-block d-md-block d-none bg-black">
       <%=render 'menus/cat-menu'%>
     </div>
-    <div class="col-lg-10">
+    <div class="col-lg-2 d-xl-none d-lg-none d-md-none d-block bg-black">
+      <%=render 'menus/menu_mobile'%>
+    </div>
+    <div class="col-lg-10 col-12">
       <div class="row">
         <div class="col-lg-12">
           <img class="img-fluid m-top-mini" src="https://actualite.cd/sites/default/files/styles/banniere_transversale/public/2020-01/banie%CC%80re%201.jpg?itok=rNJp-Eqn">
@@ -32,7 +35,7 @@
       </div>
       <div class="row m-top-mini">
         <% @tops.each do |article| %>
-        <div class="col-lg-3 text-center">
+        <div class="col-lg-3 col-6 text-center">
           <%=link_to article do %>
             <%= image_tag article.image.url, class:"img-fluid mb-2" %>
           <% end %>
@@ -51,9 +54,9 @@
               <hr>
               </div>
         <% @articles.each do |article| %>
-        <div class="col-lg-12 mb-4">
+        <div class="col-lg-12 col-12 mb-4">
           <div class="row">
-            <div class="col-lg-6 m-top-mini">
+            <div class="col-lg-6 col-6 m-top-mini">
               <span class="categorie-titre"><%=article.rubrique.titre%></span>
               <h2 class="article-titre">
                 <%=link_to article do %>
@@ -63,7 +66,7 @@
               <h6><%= article.votes_for.size %> réaction(s)</h6>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-6">
               <%=link_to article do %>
             <%= image_tag article.image.url, class:"img-fluid" %>
             <% end %>
