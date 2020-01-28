@@ -1,7 +1,10 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-2 bg-black">
+    <div class="col-lg-2 d-xl-block d-lg-block d-md-block d-none bg-black">
       <%=render 'menus/cat-menu'%>
+    </div>
+    <div class="col-lg-2 d-xl-none d-lg-none d-md-none d-block bg-black">
+      <%=render 'menus/menu_mobile'%>
     </div>
 
     <!-- Post Content Column -->
@@ -40,11 +43,11 @@
             <span class="reactions"><%=@article.get_likes.size%> <%= @article.agree %></span> | 
             <span class="reactions"> <%=@article.get_dislikes.size%> <%= @article.disagree %></span>
              <div class="row m-top-mini">
-  <div class="col-lg-3">
+  <div class="col-lg-3 col-12 mb-2">
     <%= link_to @article.agree, like_article_path(@article),class:"btn btn-success btn-block text-grand text-maj text-bold", method: :put %>
   </div>
 
-  <div class="col-lg-3">
+  <div class="col-lg-3 col-12">
     <%= link_to @article.disagree, dislike_article_path(@article),class:"btn btn-danger btn-block text-grand text-maj text-bold", method: :put %>  
   </div>
 
