@@ -46,10 +46,12 @@
       </div>
 
             <div class="row m-top">
+              <div class="col-lg-12 mb-2">
+                <h1 class="rubrique-titre">autres sujets</h1>
+              <hr>
+              </div>
         <% @articles.each do |article| %>
         <div class="col-lg-12 mb-4">
-          <h1 class="rubrique-titre">autres sujets</h1>
-          <hr>
           <div class="row">
             <div class="col-lg-6 m-top-mini">
               <span class="categorie-titre"><%=article.rubrique.titre%></span>
