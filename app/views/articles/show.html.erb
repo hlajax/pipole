@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 bg-black">
+      <%=render 'menus/cat-menu'%>
+    </div>
+
+    <!-- Post Content Column -->
+      <div class="col-lg-7">
+        <p id="notice"><%= notice %></p>
+        <!-- Title -->
+        <h1 class="grand-titre mt-4"><%= @article.titre %></h1>
+
+        <!-- Author -->
+        <p class="lead">
+          Publié par
+          <a href="#">la rédaction</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p>Publié le, <%= @article.created_at.strftime("%d %B %Y") %></p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <%= image_tag @article.image.url, class:"img-fluid rounded" %>
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead">
+          <%= @article.contenu %>
+        </p> 
+        <hr>
+        <div class="card my-4">
+          <h5 class="card-header">Votre Avis:</h5>
+          <div class="card-body">
+            <span class="reactions"><%= @article.votes_for.size %> réactions</span> | 
+            <span class="reactions"><%=@article.get_likes.size%> <%= @article.agree %></span> | 
+            <span class="reactions"> <%=@article.get_dislikes.size%> <%= @article.disagree %></span>
+             <div class="row m-top-mini">
+  <div class="col-lg-3">
+    <%= link_to @article.agree, like_article_path(@article),class:"btn btn-success btn-block text-grand text-maj text-bold", method: :put %>
+  </div>
+
+  <div class="col-lg-3">
+    <%= link_to @article.disagree, dislike_article_path(@article),class:"btn btn-danger btn-block text-grand text-maj text-bold", method: :put %>  
+  </div>
+
+ </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-3">
+
+        <!-- Search Widget 
+        <div class="card my-4">
+          <h5 class="card-header">Search</h5>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>-->
+
+        <!-- Categories Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Sujets Similaires</h5>
+          <div class="card-body">
+            <% @articles_similaires.each do |article| %>
+        <div class="col-lg-12 mb-4">
+          <div class="row">
+            <div class="col-lg-12">
+              <%=link_to article do %>
+            <%= image_tag article.image.url, class:"img-fluid" %>
+            <% end %>
+            </div>
+
+            <div class="col-lg-12 m-top-mini">
+              <h6 class="article-titre">
+                <%=link_to article do %>
+                <%= article.titre %>
+                <% end %>
+              </h6>
+              <h6><%= article.votes_for.size %> réaction(s)</h6>
+            </div>
+          </div>
+        </div>
+        <% end %>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+</div>

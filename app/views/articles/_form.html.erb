@@ -1,0 +1,51 @@
+<%= form_with(model: article, local: true) do |form| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+        <% article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titre %>
+    <%= form.text_field :titre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contenu %>
+    <%= form.text_area :contenu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agree %>
+    <%= form.text_field :agree %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disagree %>
+    <%= form.text_field :disagree %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.collection_select :rubrique_id, Rubrique.all, :id, :titre, {prompt: "Choisir une rubrique"} %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

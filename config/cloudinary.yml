@@ -1,0 +1,9 @@
+development:
+  cloud_name: "aseed"
+  api_key: "415884918862664"
+  api_secret: "BSkQ6J2luy3TiV5Hw7j-Up3NrAc"
+
+production:
+  cloud_name: "aseed"
+  api_key: "415884918862664"
+  api_secret: "BSkQ6J2luy3TiV5Hw7j-Up3NrAc"

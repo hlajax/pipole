@@ -1,0 +1,27 @@
+<%= form_with(model: rubrique, local: true) do |form| %>
+  <% if rubrique.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rubrique.errors.count, "error") %> prohibited this rubrique from being saved:</h2>
+
+      <ul>
+        <% rubrique.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titre %>
+    <%= form.text_field :titre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
