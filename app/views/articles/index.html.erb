@@ -7,7 +7,6 @@
       <%=render 'menus/menu_mobile'%>
     </div>
     <div class="col-lg-10 col-12">
-      
       <div class="row">
         <%@une.each do |article|%>
         <div class="col-lg-7">
@@ -16,8 +15,12 @@
           <% end %>
         </div>
         <div class="col-lg-5 m-top-mini">
-          <h5 class="rubrique-titre">à la une <span class="categorie-titre-minie ml-4"><%=article.rubrique.titre%></span></h5>
-          <hr>
+          <h5 class="rubrique-titre">à la une 
+            <span class="categorie-titre-minie ml-4">
+              <%=article.rubrique.titre%>
+              </span>
+            </h5>
+            <hr>
           <h2 class="article-titre">
           <%=link_to article do %>
                 <%= article.titre %>
@@ -52,61 +55,170 @@
       </div>
 
       <div class="row m-top">
-              <div class="col-lg-12 mb-2">
-                <hr class="politique-separateur">
-                <h1 class="rubrique-titre politique-entete">Politique</h1>
+          <div class="col-lg-12 mb-2">
+              <hr class="politique-separateur">
+              <h1 class="rubrique-titre politique-entete">Politique</h1>
               <hr>
-              </div>
-              <div class="col-lg-6">
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <% @politune.each do |article| %>
+              <div class="col-lg-12 col-12 mb-4">
                 <div class="row">
-                  <% @politune.each do |article| %>
-        <div class="col-lg-12 col-12 mb-4">
-          <div class="row">
-            <div class="col-lg-12 col-6">
-              <%=link_to article do %>
-            <%= image_tag article.image.url, class:"img-fluid" %>
-            <% end %>
-              <h2 class="article-titre-mini">
-                <%=link_to article do %>
-                <%= article.titre %>
-                <% end %>
-              </h2>
-              <p class="texte-reaction">
-                <small><%= article.votes_for.size %> réaction(s)</small>
-              </p>
+                  <div class="col-lg-12 col-6">
+                    <%=link_to article do %>
+                      <%= image_tag article.image.url, class:"img-fluid" %>
+                    <% end %>
+                    <h2 class="article-titre-mini">
+                      <%=link_to article do %>
+                        <%= article.titre %>
+                      <% end %>
+                    </h2>
+                    <p class="texte-reaction">
+                      <small><%= article.votes_for.size %> réaction(s)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <% @politiques.each do |article| %>
+              <div class="col-lg-6 col-12 mb-2">
+                <div class="row">
+                  <div class="col-lg-12 col-6">
+                    <%=link_to article do %>
+                      <%= image_tag article.image.url, class:"img-fluid" %>
+                    <% end %>
+                    <h2 class="article-titre-petit">
+                      <%=link_to article do %>
+                        <%= article.titre %>
+                      <% end %>
+                    </h2>
+                    <p class="texte-reaction">
+                      <small><%= article.votes_for.size %> réaction(s)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
             </div>
           </div>
         </div>
-        <% end %>
+
+              <div class="row m-top">
+          <div class="col-lg-12 mb-2">
+              <hr class="politique-separateur">
+              <h1 class="rubrique-titre politique-entete">Sport</h1>
+              <hr>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <% @sportune.each do |article| %>
+              <div class="col-lg-12 col-12 mb-4">
+                <div class="row">
+                  <div class="col-lg-12 col-6">
+                    <%=link_to article do %>
+                      <%= image_tag article.image.url, class:"img-fluid" %>
+                    <% end %>
+                    <h2 class="article-titre-mini">
+                      <%=link_to article do %>
+                        <%= article.titre %>
+                      <% end %>
+                    </h2>
+                    <p class="texte-reaction">
+                      <small><%= article.votes_for.size %> réaction(s)</small>
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="row">
-                  <% @politiques.each do |article| %>
-        <div class="col-lg-6 col-12 mb-2">
-          <div class="row">
-            <div class="col-lg-12 col-6">
-              <%=link_to article do %>
-            <%= image_tag article.image.url, class:"img-fluid" %>
-            <% end %>
-              <h2 class="article-titre-petit">
-                <%=link_to article do %>
-                <%= article.titre %>
-                <% end %>
-              </h2>
-              <p class="texte-reaction">
-                <small><%= article.votes_for.size %> réaction(s)</small>
-              </p>
+              <% end %>
             </div>
-
-
-
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <% @sports.each do |article| %>
+              <div class="col-lg-6 col-12 mb-2">
+                <div class="row">
+                  <div class="col-lg-12 col-6">
+                    <%=link_to article do %>
+                      <%= image_tag article.image.url, class:"img-fluid" %>
+                    <% end %>
+                    <h2 class="article-titre-petit">
+                      <%=link_to article do %>
+                        <%= article.titre %>
+                      <% end %>
+                    </h2>
+                    <p class="texte-reaction">
+                      <small><%= article.votes_for.size %> réaction(s)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
           </div>
         </div>
-        <% end %>
+
+
+              <div class="row m-top">
+          <div class="col-lg-12 mb-2">
+              <hr class="politique-separateur">
+              <h1 class="rubrique-titre politique-entete">Célébrités</h1>
+              <hr>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <% @celebune.each do |article| %>
+              <div class="col-lg-12 col-12 mb-4">
+                <div class="row">
+                  <div class="col-lg-12 col-6">
+                    <%=link_to article do %>
+                      <%= image_tag article.image.url, class:"img-fluid" %>
+                    <% end %>
+                    <h2 class="article-titre-mini">
+                      <%=link_to article do %>
+                        <%= article.titre %>
+                      <% end %>
+                    </h2>
+                    <p class="texte-reaction">
+                      <small><%= article.votes_for.size %> réaction(s)</small>
+                    </p>
+                  </div>
                 </div>
               </div>
-      </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <% @celebrites.each do |article| %>
+              <div class="col-lg-6 col-12 mb-2">
+                <div class="row">
+                  <div class="col-lg-12 col-6">
+                    <%=link_to article do %>
+                      <%= image_tag article.image.url, class:"img-fluid" %>
+                    <% end %>
+                    <h2 class="article-titre-petit">
+                      <%=link_to article do %>
+                        <%= article.titre %>
+                      <% end %>
+                    </h2>
+                    <p class="texte-reaction">
+                      <small><%= article.votes_for.size %> réaction(s)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+
+
 
 
     </div>
