@@ -8,6 +8,12 @@ class ArticlesController < ApplicationController
     @une = Article.all.order("created_at DESC").limit(1)
     @tops = Article.all.limit(4).offset(1).order("created_at DESC")
     @articles = Article.all.offset(5).order("created_at DESC")
+    @politune = Article.where(rubrique: [1]).limit(1).order("created_at DESC")
+    @sportune = Article.where(rubrique: [2]).limit(2).order("created_at DESC")
+    @celebune = Article.where(rubrique: [3]).limit(2).order("created_at DESC")
+    @politiques = Article.where(rubrique: [1]).limit(4).offset(1).order("created_at DESC")
+    @sports = Article.where(rubrique: [2]).limit(2).offset(1).order("created_at DESC")
+    @celebs = Article.where(rubrique: [3]).limit(2).offset(1).order("created_at DESC")
   end
 
   # GET /articles/1
