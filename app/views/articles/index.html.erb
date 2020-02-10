@@ -7,11 +7,7 @@
       <%=render 'menus/menu_mobile'%>
     </div>
     <div class="col-lg-10 col-12">
-      <div class="row">
-        <div class="col-lg-12">
-          <img class="img-fluid m-top-mini" src="https://actualite.cd/sites/default/files/styles/banniere_transversale/public/2020-01/banie%CC%80re%201.jpg?itok=rNJp-Eqn">
-        </div>
-      </div>
+      
       <div class="row">
         <%@une.each do |article|%>
         <div class="col-lg-7">
@@ -27,7 +23,9 @@
                 <%= article.titre %>
           <% end %>
           </h2>
-          <h6 class="texte-reaction"><%= article.votes_for.size %> réaction(s)</h6>
+          <p class="texte-reaction">
+            <small><%= article.votes_for.size %> réaction(s)</small>
+          </p>
           <hr>
         </div>
         <%end%>
@@ -46,7 +44,9 @@
           <h6 class="article-titre-mini">
             <%=link_to article do %><%= article.titre %><% end %>
           </h6>
-          <h6 class="texte-reaction"><%= article.votes_for.size %> réaction(s)</h6>
+          <h6 class="texte-reaction">
+            <small><%= article.votes_for.size %> réaction(s)</small>
+          </h6>
         </div>
         <% end %>
       </div>
@@ -66,12 +66,14 @@
               <%=link_to article do %>
             <%= image_tag article.image.url, class:"img-fluid" %>
             <% end %>
-              <h2 class="article-titre-petit">
+              <h2 class="article-titre-mini">
                 <%=link_to article do %>
                 <%= article.titre %>
                 <% end %>
               </h2>
-              <h6 class="texte-reaction"><%= article.votes_for.size %> réaction(s)</h6>
+              <p class="texte-reaction">
+                <small><%= article.votes_for.size %> réaction(s)</small>
+              </p>
             </div>
           </div>
         </div>
@@ -81,7 +83,7 @@
               <div class="col-lg-6">
                 <div class="row">
                   <% @politiques.each do |article| %>
-        <div class="col-lg-6 col-12 mb-4">
+        <div class="col-lg-6 col-12 mb-2">
           <div class="row">
             <div class="col-lg-12 col-6">
               <%=link_to article do %>
@@ -92,7 +94,9 @@
                 <%= article.titre %>
                 <% end %>
               </h2>
-              <h6 class="texte-reaction"><%= article.votes_for.size %> réaction(s)</h6>
+              <p class="texte-reaction">
+                <small><%= article.votes_for.size %> réaction(s)</small>
+              </p>
             </div>
 
 

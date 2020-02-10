@@ -121,7 +121,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .article-titre-petit{
 	text-transform: capitalize;
-	font-size: 18px;
+	font-size: 12px;
 	font-weight: bold;
 	margin-top:5%;
 }
