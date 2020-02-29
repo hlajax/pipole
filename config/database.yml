@@ -22,7 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   user: postgres
-  password: 900610
+  password: Mypostgresp@ssword10
 development:
   <<: *default
   database: pipole_development
