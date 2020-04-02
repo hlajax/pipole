@@ -1,23 +1,24 @@
-
-                
-          <h3 class="text-white logo text-center">
-            <%=link_to root_path do %>
-                pipole
-            <% end %>
-          </h3>
-        <ul class="nav  nav-principale"> 
-          <%Rubrique.all.each do |rubrique| %>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><%=rubrique.titre%></a>
-          </li>
-        <% end %>
-          <%if lecteur_signed_in?%>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Mon profil</a>
-          </li>
-          <% else %>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Connexion</a>
-          </li>
-          <% end %>
-      </ul>
+<div class="d-xl-none d-lg-none d-md-none d-block">
+  <h4 class="logo text-center mt-2 mb-2">les débats</h4>
+  <div class="carousel"
+  data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": true }'>
+  <div class="carousel-cell">
+    <a class="" href="#">accueil</a>
+  </div>
+  <div class="carousel-cell">
+    <a class="" href="#">à propos</a>
+  </div>
+  <%if lecteur_signed_in?%>
+  <div class="carousel-cell">
+    <a class="" href="#">Mon profil</a>
+  </div>
+  <% else %>
+  <div class="carousel-cell">
+    <a class="" href="#">Connexion</a> 
+  </div>
+  <% end %>
+  <div class="carousel-cell">
+    <a class="" href="#">contact</a>
+  </div>
+</div>
+</div>

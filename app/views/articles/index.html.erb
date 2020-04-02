@@ -1,4 +1,5 @@
 <%=render 'menus/cat-menu'%>
+<%=render 'menus/menu_mobile'%>
 <div class="container">
   <div class="row">
     <div class="col-lg-8 offset-lg-1 col-12 mb-4 mt-4">
@@ -21,18 +22,25 @@
                <%= article.contenu %> 
           
         </p>
-          <span>
+          <span class="d-xl-block d-lg-block d-md-block d-none">
             <%= link_to article.agree, like_article_path(article),class:"btn btn-success", method: :put %>
             <%= link_to article.disagree, dislike_article_path(article),class:"btn btn-danger", method: :put %>  
-            <button type="button" class="btn btn-primary"><i class="fab fa-facebook-f"></i> Partager sur Facebook</button>
+            <button type="button" class="btn btn-primary"><i class="fab fa-facebook-f"></i> Partager</button>
             <button type="button" class="btn btn-info"><i class="fab fa-twitter"></i> Tweeter</button>
+          </span>
+          <!---------bouton pour mobile-------->
+          <span class="d-xl-none d-lg-none d-md-none d-block">
+            <%= link_to article.agree, like_article_path(article),class:"btn btn-success btn-sm", method: :put %>
+            <%= link_to article.disagree, dislike_article_path(article),class:"btn btn-danger btn-sm", method: :put %>  
+            <button type="button" class="btn btn-primary btn-sm"><i class="fab fa-facebook-f"></i> Partager</button>
+            <button type="button" class="btn btn-info btn-sm"><i class="fab fa-twitter"></i> Tweeter</button>
           </span>
         </div>
         </div>
         <%end%>
       </div>
     </div>
-    <div class="col-lg-3 col-12 mt-4">
+    <div class="col-lg-3 col-12 mt-4 d-xl-block d-lg-block d-md-block d-none">
       <%=render 'menus/smenu'%>
     </div>
   </div>

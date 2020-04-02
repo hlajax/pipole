@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require bootstrap
+ *= require flickity
  */
 body{
 	margin:0;
@@ -24,6 +25,31 @@ body{
 background-color: #262626;
 }
 .navbar-niuz .nav-link{
+	font-size: 16px;
+	color: #999898;
+	text-transform: uppercase;
+	font-weight: bold;
+
+}
+.carousel {
+  background-color: #262626;
+}
+
+.carousel-cell {
+  width: 30%;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: left;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+.carousel-cell a{
 	font-size: 18px;
 	color: #999898;
 	text-transform: uppercase;
@@ -89,3 +115,60 @@ background-color: #262626;
     
   padding: 0 15px;
 }
+/*-------media queries------------*/
+@media (min-width: 320px) and (max-width: 480px) {
+ 
+.navbar-niuz{
+background-color: #262626;
+}
+.navbar-niuz .nav-link{
+	font-size: 18px;
+	color: #999898;
+	text-transform: uppercase;
+	font-weight: bold;
+
+}
+
+.niuz-container{
+	width:100%;
+	height: auto;
+	padding: 0%;
+}
+.niuz-container img{
+	width:100%;
+	height: auto;
+}
+.niuz-entete{
+	width:100%;
+	height: auto;
+	padding: 5%;
+}
+.logo{
+	font-size: 24px;
+	color: #999898;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.niuz-titre a{
+	font-size: 30px;
+	color:white;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.niuz-corps{
+	width:100%;
+	height: auto;
+	padding: 5%;
+}
+.niuz-contenu{
+	font-size: 16px;
+	color:white;
+	margin-top:5%;
+}
+.btn{
+	border-radius: 0px;
+	text-transform: capitalize;
+}
+	
+  }
+/*-------media queries fin--------*/
