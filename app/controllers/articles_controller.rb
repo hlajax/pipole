@@ -5,15 +5,8 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @une = Article.all.order("created_at DESC").limit(1)
-    @tops = Article.all.limit(4).offset(1).order("created_at DESC")
+    @une = Article.all.order("created_at DESC").limit(20)
     @articles = Article.all.offset(5).order("created_at DESC")
-    @politune = Article.where(rubrique: [1]).limit(1).order("created_at DESC")
-    @sportune = Article.where(rubrique: [2]).limit(1).order("created_at DESC")
-    @celebune = Article.where(rubrique: [3]).limit(1).order("created_at DESC")
-    @politiques = Article.where(rubrique: [1]).limit(4).offset(1).order("created_at DESC")
-    @sports = Article.where(rubrique: [2]).limit(2).offset(1).order("created_at DESC")
-    @celebs = Article.where(rubrique: [3]).limit(2).offset(1).order("created_at DESC")
   end
 
   # GET /articles/1
@@ -25,13 +18,13 @@ class ArticlesController < ApplicationController
   def upvote
   @article = Article.friendly.find(params[:id])
   @article.liked_by current_lecteur
-  redirect_to @article
+  redirect_to articles_url
 end
 
 def downvote
   @article = Article.friendly.find(params[:id])
   @article.downvote_from current_lecteur
-  redirect_to @article
+  redirect_to articles_url
 end
 
   # GET /articles/new

@@ -12,256 +12,80 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
  */
 body{
 	margin:0;
-	background-color: #202125;
+	background-color: #18191a;
 	color: white;
-	font-family: 'Lato', sans-serif;
     font-size: 16px;
 }
-h1,h2,h3,h4,h5,h6{
-	font-family: 'Arvo', serif;
+.navbar-niuz{
+background-color: #262626;
 }
-.main-separateur{
-	background-color: cornflowerblue;
-	height:1px;
-	width: 100%;
-}
-.politique-separateur{
-	background-color: crimson;
-	height:1px;
-	width: 100%;
-}
-.politique-entete{
-	color: crimson;
-}
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  overflow-x: hidden;
- overflow-y: hidden;
-  padding-top: 20px;
-}
-.bg-black{
-	background-color: #202125;
-}
-.nav-principale .nav-link{
+.navbar-niuz .nav-link{
 	font-size: 18px;
+	color: #999898;
 	text-transform: uppercase;
-	font-weight: 700;
-	color: white;
-}
-.bloc-card{
-	background-color: #272727;
-}
-.my-card{
-	width:100%;
+	font-weight: bold;
 
 }
-.my-card-body{
+.niuz-container{
 	width:100%;
-	padding:3%;
-	
+	height: auto;
+	padding: 0%;
 }
-.categorie-titre{
-	background-color:red;
-	color:white;
-	padding: 1.5%;
-	font-size:14px;
-	text-transform: uppercase;
+.niuz-container img{
+	width:100%;
+	height: auto;
 }
-.categorie-titre-minie{
-	background-color:red;
-	color:white;
-	padding: 2%;
-	font-size:12px;
-	text-transform: capitalize;
-	font-weight: 900;
+.niuz-entete{
+	width:100%;
+	height: auto;
+	padding: 0%;
 }
-.categorie-titre-petite{
-	background-color:red;
-	color:white;
-	padding: 2%;
-	font-size:12px;
-	text-transform: capitalize;
-	font-weight: 900;
-}
-.article-titre{
-	text-transform: capitalize;
-	font-weight: bold;
-	margin-top:5%;
-	
-}
-.article-titre a{
-	color:white;
-	
-}
-.article-titre a:hover{
-	text-decoration:none;
-	
-}
-.article-titre-mini{
-	text-transform: capitalize;
-	font-weight: 900;
-	margin-top:5%;
-}
-.article-titre-mini a{
-	color:white;
-	
-}
-.article-titre-mini a:hover{
-	text-decoration:none;
-	
-}
-.article-titre-petit{
-	text-transform: capitalize;
-	font-size: 12px;
-	font-weight: bold;
-	margin-top:5%;
-}
-.article-titre-petit a{
-	color:white;
-	
-}
-.article-titre-petit a:hover{
-	text-decoration:none;
-	
-}
-.rubrique-titre{
-	text-transform: capitalize;
-}
-.sous-rubrique-titre{
-	text-transform: capitalize;
-}
-.grand-titre{
-	text-transform: capitalize;
-	margin-top:5%;
-	
-}
-.reactions{
-	font-weight: normal;	
-}
-.logo a{
-	font-family: 'Cinzel', serif;
+.niuz-titre a{
 	font-size: 45px;
-	color: white;
-}
-.logo a:hover{
-	text-decoration: none;
-}
-.m-top-grand{
-	margin-top:10%;
-}
-.m-top{
-	margin-top:5%;
-}
-.m-top-mini{
-	margin-top:2.5%;
-}
-.p-left{
-	padding-left: 5%;
-}
-/*-------------------------------------------------------------end PC version-------------------------------------------------------*/
-@media all and (max-width: 414px) and (min-width: 320px) {
-.sidenav {
-  height: auto;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #202125;
-  padding-top: 20px;
-}
-.article-titre{
-	text-transform: capitalize;
-	font-weight: 900;
-	margin-top:5%;
-	font-size: 20px;
-	
-}
-.article-titre a{
 	color:white;
-	
-}
-.article-titre a:hover{
-	text-decoration:none;
-	
-}
-.article-titre-mini{
-	text-transform: capitalize;
-	font-weight: 900;
-	margin-top:5%;
-	font-size: 12px;
-	
-}
-.article-titre-mini a{
-	color:white;
-	
-}
-.article-titre-mini a:hover{
-	text-decoration:none;
-	
-}
-
-.categorie-titre{
-	background-color:cornflowerblue;
-	color:white;
-	padding: 1.5%;
-	font-size:8;
+	font-weight: bold;
 	text-transform: uppercase;
 }
-
-.categorie-titre-minie{
-	background-color:cornflowerblue;
-	color:white;
-	padding: 2%;
-	font-size:8;
-	text-transform: capitalize;
-	font-weight: 900;
+.niuz-corps{
+	width:100%;
+	height: auto;
+	padding: 0%;
 }
-.categorie-titre-petite{
-	background-color:cornflowerblue;
-	color:white;
-	padding: 2%;
-	font-size:8px;
-	text-transform: capitalize;
-	font-weight: 900;
-}
-
-.rubrique-titre{
-	text-transform: capitalize;
-	font-weight: 900;
+.niuz-contenu{
 	font-size: 18px;
-}
-.sous-rubrique-titre{
-	text-transform: capitalize;
-	font-weight: 900;
-}
-.grand-titre{
-	text-transform: capitalize;
-	font-weight: 900;
+	color:white;
 	margin-top:5%;
-	
 }
-.nav-principale .nav-link{
-	font-size: 10px;
-	text-transform: uppercase;
-	font-weight: 700;
-	color: white;
+.btn{
+	border-radius: 0px;
+	text-transform: capitalize;
 }
-
-.texte-reaction{
-	font-size: 8px;
-}
-.lead{
-	font-size: 16px;
+.sidebar-section {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 
+.sidebar-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 25%;
+}
+	/* Position the items */
+	.sidebar-item:nth-child(2) { top: 25%; }
+	.sidebar-item:nth-child(3) { top: 50%; }
+	.sidebar-item:nth-child(4) { top: 75%; }
 
+.make-me-sticky {
+	position: sticky;
+	top: 0;
+    
+  padding: 0 15px;
 }

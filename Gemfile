@@ -22,6 +22,7 @@ gem 'acts_as_votable', '~> 0.12.1'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'cloudinary', '~> 1.13', '>= 1.13.2'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'bullet', group: 'development'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

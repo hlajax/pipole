@@ -1,0 +1,11 @@
+<div class="container-fluid bg-geste">
+	<div class="row">
+		<div class="col-lg-12">
+			<ul class="nav nav-pills nav-cat">
+				<%Category.all.each do |categorie| %>
+				<li class="nav-item"><a class="nav-link" href=""><%=categorie.titre%></a></li>
+				<%end%>
+			</ul>
+		</div>
+	</div>
+</div>
