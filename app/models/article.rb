@@ -4,4 +4,5 @@ class Article < ApplicationRecord
     friendly_id :titre, use: :slugged
     mount_uploader :image, ImageUploader
     belongs_to :rubrique
+    has_rich_text :contenu
 end
