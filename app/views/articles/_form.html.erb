@@ -1,4 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      
+    
 <%= form_with(model: article, local: true) do |form| %>
+<div class="row">
   <% if article.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
@@ -10,42 +16,52 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div class="col-lg-8">
+  <div class="row">
+  <div class="form-group col-lg-12">
     <%= form.label :titre %>
-    <%= form.text_field :titre %>
+    <%= form.text_field :titre, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-lg-12">
     <%= form.label :contenu %>
     <%= form.rich_text_area :contenu %>
   </div>
-
-  <div class="field">
+  </div>
+</div>
+<div class="col-lg-4">
+  <div class="row">
+  <div class="form-group col-lg-12">
     <%= form.label :agree %>
-    <%= form.text_field :agree %>
+    <%= form.text_field :agree, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-lg-12">
     <%= form.label :disagree %>
-    <%= form.text_field :disagree %>
+    <%= form.text_field :disagree, class:"form-control" %>
   </div>
 
 
-  <div class="field">
+  <div class="form-group col-lg-12">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class:"form-control" %>
   </div>
 
 
-  <div class="field">
+  <div class="form-group col-lg-12">
     <%= form.label :image %>
-    <%= form.collection_select :rubrique_id, Rubrique.all, :id, :titre, {prompt: "Choisir une rubrique"} %>
+    <%= form.collection_select :rubrique_id, Rubrique.all, :id, :titre, {prompt: "Choisir une rubrique"}, class:"form-control" %>
   </div>
 
 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group col-lg-12">
+    <%= form.submit "Publier l'article", class:"btn btn-success" %>
+  </div>
+  </div>
+  </div>
   </div>
 <% end %>
+</div>
+  </div>
+</div>

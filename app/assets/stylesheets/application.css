@@ -15,11 +15,16 @@
  *= require bootstrap
  *= require flickity
  */
+@import "actiontext";
 body{
 	margin:0;
 	background-color: #18191a;
 	color: white;
     font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Merriweather', serif;
 }
 .navbar-niuz{
 background-color: #262626;
@@ -150,7 +155,7 @@ background-color: #262626;
 	font-weight: bold;
 }
 .niuz-titre a{
-	font-size: 30px;
+	font-size: 20px;
 	color:white;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -161,7 +166,7 @@ background-color: #262626;
 	padding: 5%;
 }
 .niuz-contenu{
-	font-size: 16px;
+	font-size: 14px;
 	color:white;
 	margin-top:5%;
 }
