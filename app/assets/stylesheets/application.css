@@ -36,8 +36,13 @@ background-color: #262626;
 	font-weight: bold;
 
 }
+.navbar{
+	padding: 0%;
+}
 .carousel {
   background-color: #262626;
+  pading:5%;
+  width:100%;
 }
 
 .carousel-cell {
@@ -127,7 +132,7 @@ background-color: #262626;
 background-color: #262626;
 }
 .navbar-niuz .nav-link{
-	font-size: 18px;
+	font-size: 20px;
 	color: #999898;
 	text-transform: uppercase;
 	font-weight: bold;
