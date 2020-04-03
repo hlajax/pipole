@@ -89,7 +89,7 @@ background-color: #262626;
 	height: auto;
 	padding: 0%;
 }
-.niuz-titre a{
+.niuz-titre{
 	font-size: 45px;
 	color:white;
 	font-weight: bold;
@@ -174,7 +174,7 @@ background-color: #262626;
 	text-transform: uppercase;
 	font-weight: bold;
 }
-.niuz-titre a{
+.niuz-titre{
 	font-size: 28px;
 	color:white;
 	font-weight: bold;

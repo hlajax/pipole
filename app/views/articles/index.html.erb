@@ -8,15 +8,13 @@
         <div class="niuz-container mt-4">
           <div class="niuz-entete">
             <h5 class="niuz-titre">
-          <%=link_to article do %>
+         
                <%= article.titre %> 
-          <% end %>
+          
           
         </h5>
           </div>
-          <%=link_to article do %>
             <%= image_tag article.image.url, class:"img-fluid m-top" %>
-          <% end %>
         <div class="niuz-corps">
             <p class="niuz-contenu">
                <%= article.contenu %> 
