@@ -29,6 +29,12 @@ h1,h2,h3,h4,h5,h6{
 .bg-top{
 background-color: #262626;
 }
+.logo{
+	font-size: 24px;
+	color: #999898;
+	text-transform: uppercase;
+	font-weight: bold;
+}
 .navbar-niuz{
 background-color: #262626;
 }
