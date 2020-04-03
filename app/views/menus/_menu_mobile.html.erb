@@ -1,7 +1,23 @@
-<div class="d-xl-none d-lg-none d-md-none d-block">
-  <h4 class="logo text-center mt-2 mb-2">les débats</h4>
-</div>
-<nav class="navbar navbar-expand sticky-top d-xl-none d-lg-none d-md-none d-block">
+<nav class="navbar navbar-expand sticky-top bg-top d-xl-none d-lg-none d-md-none d-block">
+  <div style="width:100%;display: flex;padding:1%;">
+    <span style="width:50%;">
+    <h5 class="logo mt-2 mb-2">les débats</h5>
+  </span>
+  <span style="width:50%;">
+    <ul class="nav nav-pills float-right mini-menu">
+        <%if lecteur_signed_in?%>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Mon profil</a>
+  </li>
+  <% else %>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Connexion</a> 
+  </li>
+  <% end %>
+    </ul>
+
+  </span>
+  </div>
     <div class="carousel" data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround": true }'>
   <div class="carousel-cell">
     <a class="" href="#">accueil</a>
@@ -9,15 +25,6 @@
   <div class="carousel-cell">
     <a class="" href="#">à propos</a>
   </div>
-  <%if lecteur_signed_in?%>
-  <div class="carousel-cell">
-    <a class="" href="#">Mon profil</a>
-  </div>
-  <% else %>
-  <div class="carousel-cell">
-    <a class="" href="#">Connexion</a> 
-  </div>
-  <% end %>
   <div class="carousel-cell">
     <a class="" href="#">contact</a>
   </div>

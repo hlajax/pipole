@@ -26,6 +26,9 @@ body{
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Merriweather', serif;
 }
+.bg-top{
+background-color: #262626;
+}
 .navbar-niuz{
 background-color: #262626;
 }
@@ -56,7 +59,6 @@ background-color: #262626;
   display: block;
   text-align: left;
   line-height: 200px;
-  font-size: 80px;
   color: white;
 }
 .carousel-cell a{
@@ -64,6 +66,7 @@ background-color: #262626;
 	color: #999898;
 	text-transform: uppercase;
 	font-weight: bold;
+	margin-bottom: 5%;
 
 }
 .niuz-container{
@@ -138,7 +141,13 @@ background-color: #262626;
 	font-weight: bold;
 
 }
+.mini-menu .nav-link{
+	font-size: 14px;
+	color: #999898;
+	text-transform: uppercase;
+	font-weight: bold;
 
+}
 .niuz-container{
 	width:100%;
 	height: auto;
