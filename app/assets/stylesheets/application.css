@@ -14,8 +14,8 @@
  *= require_self
  *= require bootstrap
  *= require flickity
+ *= require actiontext
  */
-@import "actiontext";
 body{
 	margin:0;
 	background-color: #18191a;
