@@ -3,4 +3,4 @@
 <% else %>
    $(".btn-primary").removeClass("disabled");
 <% end %>
-   $("#art-<%= @article.id %>").html('<%= @article.get_upvotes.size %> personnes ont dit <%= @article.agree %> <%= @article.get_downvotes.size %> personnes ont dit <%= @article.disagree %>');
+   $("#art-<%= @article.id %>").html('<small> <%= @article.get_upvotes.size %> <%= @article.agree %> | <%= @article.get_downvotes.size %> <%= @article.disagree %> </small>');
