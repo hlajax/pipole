@@ -50,3 +50,32 @@
 
           </div>
         </div>
+
+
+
+         <span class="d-xl-block d-lg-block d-md-block d-none">
+            
+            <%= link_to like_article_path(article), method: :get, remote: true, class: 'like_post' %>
+            <%= link_to article.disagree, dislike_article_path(article),class:"btn btn-danger", method: :put %>
+            <button type="button" class="btn btn-primary"><i class="fab fa-facebook-f"></i> Partager</button>
+            <button type="button" class="btn btn-info"><i class="fab fa-twitter"></i> Tweeter</button>
+          </span>
+          <!---------bouton pour mobile-------->
+          <span class="d-xl-none d-lg-none d-md-none d-block">
+            <%= link_to article.agree, like_article_path(article),class:"btn btn-success btn-sm", method: :put %>
+            <%= link_to article.disagree, dislike_article_path(article),class:"btn btn-danger btn-sm", method: :put %>  
+            <button type="button" class="btn btn-primary btn-sm"><i class="fab fa-facebook-f"></i> Partager</button>
+            <button type="button" class="btn btn-info btn-sm"><i class="fab fa-twitter"></i> Tweeter</button>
+          </span>
+
+
+
+          <%=# link_to article.agree, like_article_path(article),class:"btn btn-success", method: :put, remote: true %>
+          <%=# link_to article.disagree, dislike_article_path(article),class:"btn btn-danger", method: :put %>
+
+
+                    <span class="d-xl-block d-lg-block d-md-block d-none">
+            
+            <button type="button" class="btn btn-primary"><i class="fab fa-facebook-f"></i> Partager</button>
+            <button type="button" class="btn btn-info"><i class="fab fa-twitter"></i> Tweeter</button>
+          </span>

@@ -23,6 +23,14 @@ body{
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
 }
+.like{
+	color:black;
+	background-color: red;
+}
+.liked{
+	background-color:black;
+	color: red;
+}
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Merriweather', serif;
 }
@@ -87,7 +95,8 @@ background-color: #262626;
 .niuz-entete{
 	width:100%;
 	height: auto;
-	padding: 0%;
+	padding: 3%;
+	background-color:#242526;
 }
 .niuz-titre{
 	font-size: 45px;
@@ -98,12 +107,26 @@ background-color: #262626;
 .niuz-corps{
 	width:100%;
 	height: auto;
-	padding: 0%;
+	padding: 3%;
+	background-color:#242526;
 }
 .niuz-contenu{
 	font-size: 18px;
 	color:white;
-	margin-top:5%;
+	margin-top:0%;
+}
+.niuz-side-left{
+	background-color:transparent;
+}
+.niuz-side-right{
+	background-color:transparent;
+}
+.niuz-side-left .nav-link{
+	font-size: 14px;
+	color: #999898;
+	text-transform: uppercase;
+	font-weight: bold;
+
 }
 .btn{
 	border-radius: 0px;

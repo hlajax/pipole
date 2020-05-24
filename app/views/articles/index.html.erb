@@ -2,7 +2,10 @@
 <%=render 'menus/menu_mobile'%>
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 offset-lg-1 col-12 mb-4 mt-4">
+    <div class="col-lg-2 col-12 mt-4 d-xl-block d-lg-block d-md-block d-none niuz-side-left">
+      <%= render "menus/menuv" %>
+    </div>
+    <div class="col-lg-7 col-12 mb-4 mt-4">
       <div class="row">
         <%@une.each do |article|%>
         <div class="niuz-container mt-4">
@@ -18,14 +21,20 @@
         <div class="niuz-corps">
             <p class="niuz-contenu">
                <%= article.contenu %> 
-          
-        </p>
-          <span class="d-xl-block d-lg-block d-md-block d-none">
-            <%= link_to article.agree, like_article_path(article),class:"btn btn-success", method: :put %>
-            <%= link_to article.disagree, dislike_article_path(article),class:"btn btn-danger", method: :put %>  
-            <button type="button" class="btn btn-primary"><i class="fab fa-facebook-f"></i> Partager</button>
-            <button type="button" class="btn btn-info"><i class="fab fa-twitter"></i> Tweeter</button>
+        <div class="row">
+          <div class="col-12">
+            <%= link_to article.agree, like_article_path(article), class:"btn btn-primary", method: :put, remote: true %> 
+            <%= link_to article.disagree, dislike_article_path(article), class:"btn btn-danger", method: :put, remote: true %>
+          </div>
+          <div class="col-lg-12">
+          <span class="d-xl-block d-lg-block d-md-block d-none" id="art-<%= article.id %>">
+            <%= article.get_dislikes.size%> personnes ont dit "<%= article.disagree%>"
+            <%= article.get_likes.size%> personnes ont dit "<%= article.agree%>
           </span>
+          </div>
+        </div>  
+        </p>
+
           <!---------bouton pour mobile-------->
           <span class="d-xl-none d-lg-none d-md-none d-block">
             <%= link_to article.agree, like_article_path(article),class:"btn btn-success btn-sm", method: :put %>
@@ -38,7 +47,7 @@
         <%end%>
       </div>
     </div>
-    <div class="col-lg-3 col-12 mt-4 d-xl-block d-lg-block d-md-block d-none">
+    <div class="col-lg-3 col-12 mt-4 d-xl-block d-lg-block d-md-block d-none niuz-side">
       <%=render 'menus/smenu'%>
     </div>
   </div>

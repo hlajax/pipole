@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  respond_to :js, :html, :json
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_lecteur!, except:[:index, :show]
 
@@ -18,13 +19,24 @@ class ArticlesController < ApplicationController
   def upvote
   @article = Article.friendly.find(params[:id])
   @article.liked_by current_lecteur
-  redirect_to articles_url
+    #if !current_lecteur.liked? @article
+      #@article.liked_by current_lecteur
+    #elsif current_lecteur.liked? @article
+      #@article.unliked_by current_lecteur 
+    #end
+      respond_to do |f|
+      f.js
+      f.html { redirect_to :index }
+    end
 end
 
 def downvote
   @article = Article.friendly.find(params[:id])
   @article.downvote_from current_lecteur
-  redirect_to articles_url
+        respond_to do |f|
+      f.js
+      f.html { redirect_to :index }
+    end
 end
 
   # GET /articles/new

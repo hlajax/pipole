@@ -1,0 +1,6 @@
+<% if current_lecteur.liked? @article %>
+   $(".btn-primary").addClass("active");
+<% else %>
+   $(".btn-primary").removeClass("disabled");
+<% end %>
+   $("#art-<%= @article.id %>").html('<%= @article.get_downvotes.size %> personnes ont dit <%= @article.disagree %> <%= @article.get_upvotes.size %> personnes ont dit <%= @article.agree %>');
