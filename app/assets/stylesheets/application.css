@@ -39,7 +39,7 @@ background-color: #262626;
 }
 .logo{
 	font-size: 24px;
-	color: #999898;
+	color: #4d82cf;
 	text-transform: uppercase;
 	font-weight: bold;
 }
@@ -118,15 +118,29 @@ background-color: #262626;
 .niuz-side-left{
 	background-color:transparent;
 }
-.niuz-side-right{
-	background-color:transparent;
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  /*z-index: 1;*/
+  background-color: transparent;
+  overflow-x: hidden;
+ overflow-y: scroll;
+  padding-top: 20px;
 }
-.niuz-side-left .nav-link{
-	font-size: 14px;
+.niuz-side-left .nav-item a{
+	font-size: 20px;
 	color: #999898;
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: 800;
 
+}
+.niuz-side-left .nav-item a:hover{
+	color: #4d82cf;
+
+}
+.niuz-side-right{
+	background-color:transparent;
 }
 .m-top-mini{
 	margin-top:2.5%;
@@ -135,6 +149,99 @@ background-color: #262626;
 	border-radius: 0px;
 	text-transform: capitalize;
 }
+.btn-trans{
+	background-color:transparent;
+}
+.btn-positive{
+	color:#388e3c;
+	background-color: transparent;
+}
+.btn-negative{
+	color:#d32f2f;
+	background-color: transparent;
+}
+.like-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.like-button.animated {
+  -webkit-animation: pop 0.9s both;
+  animation: pop 0.9s both;
+}
+.like-button svg {
+  opacity: 1;
+}
+.like-button svg path {
+  fill: #333;
+  transition: fill .4s ease-out;
+}
+.like-button.active svg path {   
+  fill: #2196f3;
+ }
+
+@-webkit-keyframes pop {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
 .sidebar-section {
   position: absolute;
   height: 100%;

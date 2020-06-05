@@ -1,11 +1,11 @@
 <%=render 'menus/cat-menu'%>
 <%=render 'menus/menu_mobile'%>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-lg-2 col-12 mt-4 d-xl-block d-lg-block d-md-block d-none niuz-side-left">
+    <div class="col-lg-3 col-12  mt-4 d-xl-block d-lg-block d-md-block d-none niuz-side-left">
       <%= render "menus/menuv" %>
     </div>
-    <div class="col-lg-7 col-12 mb-4 mt-4">
+    <div class="col-lg-6 col-12 mb-4 mt-4">
       <div class="row">
         <%@une.each do |article|%>
         <div class="niuz-container mt-4">
@@ -23,14 +23,32 @@
                <%= article.contenu %> 
         <div class="row">
           <div class="col-12 m-top-mini">
-            <%= link_to article.agree, like_article_path(article), class:"btn btn-primary", method: :put, remote: true %> 
-            <%= link_to article.disagree, dislike_article_path(article), class:"btn btn-danger", method: :put, remote: true %>
+            <% if lecteur_signed_in? %>
+            <a href="#" class="like-button">
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="50" height="50" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="vote-yea" class="svg-inline--fa fa-vote-yea fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M608 320h-64v64h22.4c5.3 0 9.6 3.6 9.6 8v16c0 4.4-4.3 8-9.6 8H73.6c-5.3 0-9.6-3.6-9.6-8v-16c0-4.4 4.3-8 9.6-8H96v-64H32c-17.7 0-32 14.3-32 32v96c0 17.7 14.3 32 32 32h576c17.7 0 32-14.3 32-32v-96c0-17.7-14.3-32-32-32zm-96 64V64.3c0-17.9-14.5-32.3-32.3-32.3H160.4C142.5 32 128 46.5 128 64.3V384h384zM211.2 202l25.5-25.3c4.2-4.2 11-4.2 15.2.1l41.3 41.6 95.2-94.4c4.2-4.2 11-4.2 15.2.1l25.3 25.5c4.2 4.2 4.2 11-.1 15.2L300.5 292c-4.2 4.2-11 4.2-15.2-.1l-74.1-74.7c-4.3-4.2-4.2-11 0-15.2z"></path></svg>
+</a>
+            <%= link_to article.agree, like_article_path(article), class:"btn btn-positive", method: :put, remote: true %>
+            <%=render 'upcount.js.erb'%> 
+            <%= link_to article.disagree, dislike_article_path(article), class:"btn btn-negative", method: :put, remote: true %>
+            <% else %>
+            <%= link_to article.agree, like_article_path(article), class:"btn btn-primary disabled", method: :put, remote: true %> 
+            <%= link_to article.disagree, dislike_article_path(article), class:"btn btn-danger disabled", method: :put, remote: true %>
+            <p>
+              <small>Vous devez être connecté pour donner votre avis <%=link_to "Connexion", new_lecteur_session_path, class:"btn btn-primary btn-sm"%>
+              </small>
+            </p>
+            <% end %>
           </div>
           <div class="col-lg-12 m-top-mini">
-          <span class="" id="art-<%= article.id %>">
+          <span class="" id="positive-<%= article.id %>">
             <small>
-              <%= article.get_dislikes.size%> <%= article.agree%> |
-            <%= article.get_likes.size%> <%= article.disagree%>
+              <%= article.get_likes.size%> <%= article.agree%>
+            </small>
+          </span>
+          <span class="" id="negative-<%= article.id %>">
+            <small>
+            <%= article.get_dislikes.size%> <%= article.disagree%>
             </small>
           </span>
           </div>
@@ -46,3 +64,56 @@
     </div>
   </div>
 </div>
+
+<script>
+  let button = document.querySelector(".like-button");
+
+button.addEventListener("click", function(e) {
+  e.preventDefault();
+  this.classList.toggle("active");
+  this.classList.add("animated");
+  generateClones(this);
+});
+
+
+function generateClones(button) {
+  let clones = randomInt(2, 4);
+  for (let it = 1; it <= clones; it++) {
+    let clone = button.querySelector("svg").cloneNode(true),
+      size = randomInt(5, 16);
+    button.appendChild(clone);
+    clone.setAttribute("width", size);
+    clone.setAttribute("height", size);
+    clone.style.position = "absolute";
+    clone.style.transition =
+      "transform 0.5s cubic-bezier(0.12, 0.74, 0.58, 0.99) 0.3s, opacity 1s ease-out .5s";
+    let animTimeout = setTimeout(function() {
+      clearTimeout(animTimeout);
+      clone.style.transform =
+        "translate3d(" +
+        (plusOrMinus() * randomInt(10, 25)) +
+        "px," +
+        (plusOrMinus() * randomInt(10, 25)) +
+        "px,0)";
+      clone.style.opacity = 0;
+    }, 1);
+    let removeNodeTimeout = setTimeout(function() {
+      clone.parentNode.removeChild(clone);
+      clearTimeout(removeNodeTimeout);
+    }, 900);
+    let removeClassTimeout = setTimeout( function() {
+      button.classList.remove("animated")
+    }, 600);
+  }
+}
+
+
+function plusOrMinus() {
+  return Math.random() < 0.5 ? -1 : 1;
+}
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+</script>

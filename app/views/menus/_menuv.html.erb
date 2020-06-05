@@ -1,15 +1,27 @@
-<ul class="nav flex-column">
+<div class="sidenav">
+  <ul class="nav flex-column">
   <% if lecteur_signed_in?%>
   <li class="nav-item">
-  <a href="/lecteurs/edit" class="nav-link"><i class="fas fa-user-circle"></i> Mon profil </a>
+  <a href="" class="nav-link"><i class="fas fa-user-circle"></i> <%=current_lecteur.nom%> </a>
   </li>
   <li class="nav-item">
-  <small><%=link_to "Déconnexion", destroy_lecteur_session_path, class:"nav-link"%></small>
+    <small>Vous avez participé <%=current_lecteur.votes.size%> fois</small>
   </li>
+  <li class="nav-item">
+  <a href="/lecteurs/edit" class="nav-link"><small>Modifier mes infos</small></a>
+  </li>
+  <li class="nav-item">
+    <a href="/lecteurs/sign_out" class="nav-link"><small>Déconnexion</small></a>
+  </li>
+  <%Rubrique.all.each do |rubrique| %>
+  <li class="nav-item">
+    <a class="nav-link" href="#"><%=rubrique.titre%></a>
+  </li>
+  <% end %>
   <% else %>
   <li class="nav-item d-xl-block d-lg-block d-md-block">
     <%=link_to "Connexion", new_lecteur_session_path, class:"nav-link"%>
   </li>
   <%end %>
 </ul>
-                       
+</div>
